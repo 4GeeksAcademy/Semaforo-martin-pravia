@@ -3,17 +3,17 @@ import { useState } from "react";
 
 const Semaforo = () => {
   const [lightColor, setLightColor] = useState("");
-  
-  const colores = ["red", "yellow", "green"];
+
+  const [colores, setColores] = useState(["red", "yellow", "green"]);
   const cambioDeColor = () => {
     const colorRandom = Math.floor(Math.random() * colores.length);
     setLightColor(colores[colorRandom]);
   };
 
-  const agregarPurpura = () =>{
-    if(!colores.includes("purple")){
-    colores.push("purple")
-    };
+  const agregarPurpura = () => {
+    if (!colores.includes("purple")) {
+      setColores([...colores, "purple"]);
+    }
   };
 
   return (
@@ -36,10 +36,20 @@ const Semaforo = () => {
             "greenDark " + (lightColor === "green" ? "greenLight" : "")
           }
         ></div>
-
+        {colores.includes("purple") && (
+          <div
+            onClick={() => setLightColor("purple")}
+            className={
+              "purpleDark " + (lightColor === "purple" ? "purpleLight" : "")
+            }
+          ></div>
+        )}
       </div>
       <button onClick={cambioDeColor} className="buttonOn">
         Encender semáforo
+      </button>
+      <button onClick={agregarPurpura} className="buttonAdd">
+        Agregar Luz Púrpura
       </button>
     </div>
   );

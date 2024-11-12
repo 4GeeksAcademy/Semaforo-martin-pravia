@@ -107,10 +107,14 @@ body {
 }
 
 .buttonOn {
-  margin-top: 30px;
+  margin-top: 20px;
+}
+.buttonAdd {
+  margin-top: 20px;
 }
 
-.darkPurple{
+
+.purpleDark {
   background-color: rgb(80, 6, 80);
   width: 70%;
   height: 33%;
@@ -121,7 +125,7 @@ body {
   margin: 2px 0;
 }
 
-.lightPurple {
+.purpleLight {
   background-color: rgb(250, 127, 250);
   width: 70%;
   height: 33%;
