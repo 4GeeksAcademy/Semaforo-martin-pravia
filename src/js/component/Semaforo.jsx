@@ -9,6 +9,13 @@ const Semaforo = () => {
     const colorRandom = Math.floor(Math.random() * colores.length);
     setLightColor(colores[colorRandom]);
   };
+
+  const agregarPurpura = () =>{
+    if(!colores.includes("purple")){
+    colores.push("purple")
+    };
+  };
+
   return (
     <div className="granDiv">
       <div className="stick"></div>
@@ -29,6 +36,7 @@ const Semaforo = () => {
             "greenDark " + (lightColor === "green" ? "greenLight" : "")
           }
         ></div>
+
       </div>
       <button onClick={cambioDeColor} className="buttonOn">
         Encender semáforo
