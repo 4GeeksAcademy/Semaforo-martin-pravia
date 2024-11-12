@@ -3,7 +3,12 @@ import { useState } from "react";
 
 const Semaforo = () => {
   const [lightColor, setLightColor] = useState("");
-
+  
+  const colores = ["red", "yellow", "green"];
+  const cambioDeColor = () => {
+    const colorRandom = Math.floor(Math.random() * colores.length);
+    setLightColor(colores[colorRandom]);
+  };
   return (
     <div className="granDiv">
       <div className="stick"></div>
@@ -25,6 +30,9 @@ const Semaforo = () => {
           }
         ></div>
       </div>
+      <button onClick={cambioDeColor} className="buttonOn">
+        Encender semáforo
+      </button>
     </div>
   );
 };
